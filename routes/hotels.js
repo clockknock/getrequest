@@ -2,11 +2,12 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.all('/:integrationId', function (req, res, next) {
+router.post('/:integrationId', function (req, res, next) {
     console.info(JSON.stringify(req.headers, null, 2), '\n ');
     console.info(JSON.stringify(req.params.integrationId, null, 2), '\n ');
     console.info(JSON.stringify(req.url, null, 2), '\n ');
     console.info(req.body);
+    res.statusCode = 403;
     res.send('respond with a resource,hello');
 });
 
